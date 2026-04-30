@@ -1,0 +1,43 @@
+*end credits on exit
+
+*update table structure:
+Airline
+- id (PK)
+- title
+- country
+- code
+
+Airplane
+- id (PK)
+- airline.id (FK)
+- model
+- totalRows -> A,B,C,D,E,F,G,H,I,J
+- totalColumns -> 1,2,3,4,5,6,7,8,9,10
+
+Flight
+- id (PK)
+- airline.id (FK)
+- airplane.id (FK)
+- source
+- destination
+- date of flight
+- take off time
+
+Passenger
+- id (PK)
+- cnic (UNIQUE)
+- name
+- contact
+- lastFlight
+
+Ticket
+- id (PK)
+- flight.id (FK)
+- passenger.id (FK)
+- seatNo
+- price
+- date of booking (DEFAULT CURRENT_TIMESTAMP)
+- status (DEFAULT 'CONFIRMED')
+CONSTRAINT uq_flight_seat UNIQUE (flight.id, seatNo)
+
+https://app.mindmup.com/map/_free/2025/12/43110b10dce411f087604ddb61e860c1
